@@ -1,0 +1,71 @@
+redis is basically a in memory storage structure/database for storing data in primary memory/ram
+    to keep the data in hot
+redis allows 110000 writes/sec and 80000 reads/sec
+the data is kept in persistent way and maintains data atomicity
+redis support different dataTypes like str, int, char, list, arr etc
+you can install redis through cmd or package manager
+    cmd: sudo apt install redis-server
+    run cmd: redis-server
+redis String:
+    initialize/reinitialize: set [varname] [value]
+    read: get [varname]
+    substring: getrange [varname] [range]: both included
+    strlen: strlen [varname]
+    delete: expire [varname] [timeInSec]: optional
+        you can directly set expiration time during initialization
+redis Int:
+    incr: increment
+    incrBy: increment incrBy
+get all keys: keys *
+remove all keys: flushall
+redis List:
+    lpush [varname] [value]: top/left push to list
+    rpush [varname] [value]: bottom/right push to list
+    lrem/rrem [varname] [count] [value]
+    lindex [varname] [index]: get element at that index
+    linsert [varname] [index] [value]
+    lrange [varname] [start] [end]
+    lset [varname] [index] [value]
+    lpushX/rpushX: check if list exists then push
+    sort [varname] [pattern]
+redis set:
+    stores only unique elements
+    sadd [varname] [values]...
+    srem [varname] [values]...
+    smembers [varname]: all elements
+    scard [varname]: length
+    sismember [varname] [value]: checks for member
+    sdiff [var1] [var2]: var1-var2
+    sinter [varname]...
+    sunion [varname]...
+    s[diff/inter/union]store [destination] [varname]... : stores the returned values
+redis sortedSets:
+    zadd [varname] [score] [value]..
+    zrange [varname] [min] [max] withscore: optional
+    zcard [varname]
+    zcount [varname] [min] [max]
+    zrevrange [varname]
+    z[rem/remrangebyscore/remrangebyrank] [varname]
+redis hyperloglog:
+    storing complex values such as ip, emails etc
+    pfadd [varname] [values]...
+    pfcount [varname]...
+    pfmerge [varname]...
+redis hashMap:
+    h[set/mset] [varname] [keys] [values]...
+    h[get/mget] [varname] [keys] [values]...
+    hkeys [varname]
+    hvals [varname]
+    hgetall [varname]
+    hincrby [varname] [key] [value]
+    hdel [varname] [key]
+    hlen [varname]
+    hstrlen [varname] [key]
+    hsetnx [varname] [key] [value]: check for key and add
+    
+
+
+
+    
+    
+

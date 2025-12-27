@@ -62,10 +62,29 @@ redis hashMap:
     hlen [varname]
     hstrlen [varname] [key]
     hsetnx [varname] [key] [value]: check for key and add
-    
-
-
-
-    
-    
-
+redis transactions:
+    cause redis provides atomicity we can group multiple cmds into a single transaction using multi and exec
+    you can also discard a transaction if no longer needed
+redis scripts:
+    you can use the redis inBuild scripts to execute redis cmds using redis.call()
+    you can even build your own scripts on top of redis scripts and return values
+    use eval cmd to execute the scripts and load to store the scripts
+redis pubsub:
+    you can create publisher and subscriber to a topic so they can send and receive events
+    a client can publish and subscribe to multiple topics
+    you can also publish/subscribe to a channel based on patterns
+redis connection and security:
+    a single redis server can have multiple clients
+    you need host and port of the server to connect to it
+    a single server can have multiple database
+        but in reality all of them are stored in a single rdb or Aof
+    you can also add authentication to your server using password
+        so when a new client needs to execute cmds he needs to provide password
+redis GeoSpatial:
+    you can provide longitude(x-axis) and latitude(y-axis) for particular location and fetch them
+    the redis views global as spherical shaped 3d obj
+    you can get the pos based on the ip and also get displacement b/w the locations
+    also find a locations within certain range from a location
+redis benchmark:
+    you can find the benchmark of your redis-server based on different params
+    you can change the number of requests to serve on, size of data and number to clients to serve on.
